@@ -69,4 +69,6 @@ Each entry is either:
   (global-set-key (kbd "C-x o") 'switch-window)
   )
 
+(with-eval-after-load "company"
+  (global-set-key (kbd "S-SPC") 'company-complete))
 ;;; packages.el ends here

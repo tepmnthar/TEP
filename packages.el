@@ -32,7 +32,7 @@
 (defconst TEP-packages
   '(
     switch-window
-    ;;(switch-window :location elpa)
+    expand-region
     )
   "The list of Lisp packages required by the local-user layer.
 
@@ -68,7 +68,28 @@ Each entry is either:
   (setq-default switch-window-timeout nil)
   (global-set-key (kbd "C-x o") 'switch-window)
   )
+(defun TEP/init-expand-region()
+  (use-package expand-region
+    :defer t)
+  (global-set-key (kbd "C-=") 'er/expand-region)
+  )
 
 (with-eval-after-load "company"
   (global-set-key (kbd "S-SPC") 'company-complete))
+
+;; 显示行号
+(global-linum-mode)
+(setq column-number-mode t)
+
+;; 高亮括号配对
+(electric-pair-mode)
+
+;; 高亮括号配对
+(show-paren-mode t)
+(setq show-paren-style 'parenthesis)
+
+;; (dolist (charset '(kana han symbol cjk-misc bopomofo))
+;;   (set-fontset-font (frame-parameter nil 'font)
+;;                     charset (font-spec :family "Source Han Sans SC"
+;;                                        :size 13)))
 ;;; packages.el ends here

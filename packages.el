@@ -78,11 +78,10 @@ Each entry is either:
   (global-set-key (kbd "S-SPC") 'company-complete))
 ;; 显示行号
 (global-linum-mode)
-(global-set-key (kbd "C-v") 'scroll-up-command)
+;; (global-set-key (kbd "C-v") 'scroll-up-command)
 (add-hook 'org-mode-hook
           (lambda()
             (linum-mode -1)))
-(add-hook ')
 (setq column-number-mode t)
 
 ;; 高亮括号配对
@@ -91,3 +90,4 @@ Each entry is either:
 ;; 高亮括号配对
 (show-paren-mode t)
 (setq show-paren-style 'parenthesis)
+;;; packages.el ends here

@@ -78,6 +78,8 @@ Each entry is either:
   (global-set-key (kbd "S-SPC") 'company-complete))
 ;; 显示行号
 (global-linum-mode)
+;; 自动刷新
+(global-auto-revert-mode t)
 ;; (global-set-key (kbd "C-v") 'scroll-up-command)
 (add-hook 'org-mode-hook
           (lambda()
